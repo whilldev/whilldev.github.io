@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css?family=Nixie+One");
+@import url("https://fonts.googleapis.com/css?family=League+Script");
+@font-face {
+    font-family: 'RNSSanzBold';
+    src: url(/html-freebie-triple-p-master/assets/fonts/humanista/RNSSanz-Bold.ttf);
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: 'RNSSanzMedium';
+    src: url(/html-freebie-triple-p-master/assets/fonts/humanista/RNSSanz-Medium.ttf);
+    font-weight:normal;
+    font-style: normal;
+}
+html::-webkit-scrollbar{
+    width: 0.7vw;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #777;
+}
+html::-webkit-scrollbar-track{
+    background-color: #555;
+}
+body {
+    margin: 0;
+    background-color: #000 !important;
+
+}
+
+header{
+    margin-top: 0em;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+#osecond-k {
+
+    margin: 0;
+    width: 100%;
+}
+
+#tri {
+    margin: 0;
+    width: 100%;
+}
+
+#cuatri {
+    margin: 0;
+    width: 100%;
+}
+
+.color-text-description{
+    
+    color: #d1d1d1;
+}
+/*effect black mirror */
+.text-style-titles{
+    position: relative;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0 0 0.15em #1da9cc;
+    user-select: none;
+    white-space: nowrap;
+    filter: blur(0.007em);
+    animation: shake linear forwards;
+    animation-timeline: view();
+}
+.text-style-titles span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+            clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+}
+
+.text-style-titles::before,
+.text-style-titles::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.text-style-titles::before {
+    animation: crack1 2.5s linear forwards;
+    -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+}
+
+.text-style-titles::after {
+    animation: crack2 2.5s linear forwards;
+    -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+            clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+}
+
+@keyframes shake {
+    5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
+        filter: blur(0.018em);
+        transform: translateY(0.018em) rotate(0deg);
+    }
+
+    10%, 30%, 40%, 50%, 70%, 80%, 90% {
+        filter: blur(0.01em);
+        transform: translateY(-0.018em) rotate(0deg);
+    }
+
+    20%, 60% {
+        filter: blur(0.03em);
+        transform: translate(-0.018em, 0.018em) rotate(0deg);
+    }
+
+    45%, 85% {
+        filter: blur(0.03em);
+        transform: translate(0.018em, -0.018em) rotate(0deg);
+    }
+
+    100% {
+        filter: blur(0.007em);
+        transform: translate(0) rotate(-0.5deg);
+    }
+}
+
+@keyframes crack1 {
+    0%, 95% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translate(-51%, -48%);
+    }
+}
+
+@keyframes crack2 {
+    0%, 95% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translate(-49%, -53%);
+    }
+}
+/* end black mirror*/
+#main-canvas {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    background: radial-gradient(circle at center center,#171717 0,#050505 58%);
+}
+
+#navBar{
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border-color: 20px white;
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.glow-effect{
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: text-shadow 0.3s ease-in-out;
+}
+  
+.glow-effect:hover {
+    animation: flicker 1.5s infinite alternate;  
+    border-radius: 30%;
+    box-shadow:
+      inset 0 0 50px #151e1f,      
+      inset 20px 0 80px rgb(0, 132, 255),   
+      inset -20px 0 80px #0ff,  
+      inset 20px 0 300px rgb(0, 140, 255),  
+      inset -20px 0 300px #0ff, 
+      0 0 50px #fff,            
+      -10px 0 80px rgb(22, 0, 146),        
+      10px 0 80px #0ff;  
+}
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #0fa,
+        0 0 80px #0fa,
+        0 0 90px #0fa,
+        0 0 100px #0fa,
+        0 0 150px #0fa;
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+#container3d {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1;
+}
+#container3d h1 {
+    font-family: 'RNSSanzMedium';
+    font-weight: bold;
+    position: relative;
+    width: 35%;
+    text-align: right;
+    justify-content: center;
+    font-size: 40px;
+    color: #ebffff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.3), 
+    0 0px 15px #fff, 0 0 10px #4c00ff, 0 0 50px #38eeff;
+}
+#container3d p {
+    position: relative;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    width: 20%;
+    padding-top: 15px;
+    padding-left: 7px;
+    color: rgb(255, 255, 255);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+   
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #289aab;
+    }
+    to {
+        text-shadow: 0 0 30px #289aab, 0 0 10px #289aab;
+    }
+}
+
+.glass-background {
+
+    height: 70vh;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@media (max-width:600px){
+    #container3d{
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #container3d h1 {
+        text-align: center;
+    }
+    #container3d p {
+        text-align: center;
+    }
+}
+/* animation block scroll */
+@keyframes appear {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    } 
+}
+.appear {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+/*end block scroll animation appear*/
+/*background style body after 3d presentation */
+.background-particle span{
+    position: fixed;
+    bottom: -180px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    background-color: #18191f;
+    box-shadow: 0 0 50px #059bff,
+    0 0 100px #00ffb3,
+    0 0 150px #006e60,
+    0 0 200px #8c00ff;
+    animation: animate 10s linear infinite;
+}
+.background-particle span:nth-child(1){
+    left: 60px;
+    animation-delay: 0.6s;
+}
+.background-particle span:nth-child(2){
+    left: 10%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+}
+.background-particle span:nth-child(3){
+    left: 20%;
+    animation-delay: 2s;
+}
+.background-particle span:nth-child(4){
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+}
+.background-particle span:nth-child(5){
+    left: 40%;
+    animation-delay: 1s;
+}
+.background-particle span:nth-child(6){
+    left: 50%;
+    animation-delay: 7s;
+}
+.background-particle span:nth-child(7){
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+}
+.background-particle span:nth-child(8){
+    left: 70%;
+    animation-delay: 8s;
+}
+.background-particle span:nth-child(9){
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+}
+.background-particle span:nth-child(10){
+    left: 90%;
+    animation-delay: 4s;
+}
+@keyframes animate {
+    0%{
+        transform: translateY();
+        opacity: 1;
+    }
+    80%{
+        opacity: .7;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
