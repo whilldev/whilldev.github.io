@@ -2,7 +2,6 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { CubeTexture } from 'three';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 // impor unreal bloom pass
@@ -10,7 +9,6 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass} from 'three/addons/postprocessing/OutputPass.js';
-import { FrontSide, BackSide, DoubleSide } from 'three';
 
 //autosizeconstant
 const container = document.getElementById('main-canvas');
@@ -56,7 +54,7 @@ rgbLoader.load(hdrUrl, function(texture){
 });
 
 //loader texture image
-const TextureLoader = new THREE.TextureLoader().load('./html-freebie-triple-p-master/assets/js/images/screen.jpeg');
+const TextureLoader = new THREE.TextureLoader().load('./assets/js/images/screen.jpeg');
 const renderScene = new RenderPass(scene, camera);
 
 const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth,
