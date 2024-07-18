@@ -64,8 +64,8 @@ header{
 }
 .text-style-titles span {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50;
+    left: 50;
     transform: translate(-50%, -50%);
     -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
             clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
@@ -75,8 +75,8 @@ header{
 .text-style-titles::after {
     content: attr(data-text);
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50;
+    left: 50;
 }
 
 .text-style-titles::before {
@@ -362,3 +362,4 @@ header{
         opacity: 0;
     }
 }
+
